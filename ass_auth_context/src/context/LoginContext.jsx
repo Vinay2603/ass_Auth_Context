@@ -1,10 +1,21 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 
-export const loginContext = createContext()
+export const LoginContext = createContext()
 
-export const loginContextProvider =()=>{
 
-    return <loginContext.Provider value={1}></loginContext.Provider>
+export const LoginContextProvider =({children})=>{
+
+const [token ,setToken ] = useState(null)
+
+const handleToken =(token)=>{
+    setToken(token)
 }
+
+    return <LoginContext.Provider value={{token ,handleToken}}>{children}</LoginContext.Provider>
+}
+
+
+
+

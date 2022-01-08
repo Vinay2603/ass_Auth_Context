@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 
 
 export const Navbar =()=>{
@@ -10,17 +10,19 @@ export const Navbar =()=>{
             justifyContent: "space-around",
         }}>
           
-           <button style={{
+           <Link to="/"><button style={{
                border: "1px solid black",
                padding : "5px",
                margin:"10px"
-           }}>Home</button>
+           }}>Home</button> </Link>
 
-           <button style={{
+           <Link to="/Login"><button style={{
                border: "1px solid black",
                padding : "5px",
                margin:"10px"
-           }}>Login</button>
+           }}>
+               
+               Login </button>  </Link>
         </div>
     )
 }

@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { LoginContext } from "../context/LoginContext";
 const axios = require('axios');
 
 
 export const Login =()=>{
+
+   const { handleToken} = useContext(LoginContext)
 
    const [form,setForm ] = useState({})
 
@@ -20,6 +23,8 @@ export const Login =()=>{
     .then(function (response) {
       // handle success
       console.log(response.data.token);
+
+      handleToken(response.data.token)
     })
     .catch(function (error) {
       // handle error
